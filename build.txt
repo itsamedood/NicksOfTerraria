@@ -1,0 +1,4 @@
+displayName = Nicks Of Terraria
+author = itsamedood
+version = 0.1
+modReferences = CalamityMod, NoxusBoss, Luminance
