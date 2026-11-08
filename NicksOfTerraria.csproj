@@ -22,6 +22,10 @@
 			<HintPath>lib\NoxusBoss.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
+		<Reference Include="ThoriumMod">
+			<HintPath>lib\ThoriumMod.dll</HintPath>
+			<Private>False</Private>
+		</Reference>
 	</ItemGroup>
 
 </Project>

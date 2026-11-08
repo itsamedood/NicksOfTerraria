@@ -1,1 +1,15 @@
-This description will show up on the steam page, check out https://steamcommunity.com/comment/Guide/formattinghelp.
+[h1]Official mod for Nicks Of Terraria.[/h1]
+[hr][/hr]
+
+[h2]What does this mod add?[/h2]
+[list]
+    [*] [b]I Can't Believe It's Not Milk![/b] - Clears debuffs.
+    [*] [b]Abnormality Anchor[/b] - An upgrade for the [url=https://calamitymod.wiki.gg/wiki/Normality_Relocator]Normality Relocator[/url]
+    [*] [b]Sword Of Nicks[/b] A sword that can 1-shot anything, provided you meet the [i]requirements[/i]...
+    [*] [spoiler]More? Yeah, there'll be more stuff.[/spoiler]
+[/list]
+
+[h2]Art coming soon lol[/h2]
+
+[hr][/hr]
+[i]Not sponsored by Nick's Of Clinton[/i]
