@@ -26,4 +26,16 @@ Items: {
 			'You don't want to know what it really is.'
 			'''
 	}
+
+	NewYorkStripSteak: {
+		DisplayName: New York Strip Steak
+		Tooltip: Tender cut from the short loin.
+	}
+
+	AbnormalityAnchor: {
+		Tooltip: ""
+		DisplayName: Abnormality Anchor
+	}
 }
+
+NPCs.Cow.DisplayName: Cow

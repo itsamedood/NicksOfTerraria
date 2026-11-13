@@ -6,7 +6,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace NicksOfTerraria.Content.Items
+namespace NicksOfTerraria.Content.Items.Weapons
 {
 	// This is a basic item template.
 	// Please see tModLoader's ExampleMod for every other example:

@@ -4,7 +4,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace NicksOfTerraria.Content.Items
+namespace NicksOfTerraria.Content.Items.Consumables
 {
 	/// <summary>
 	/// Clears all negative effects. Started because I drank Nilk Carton ONE TIME... NEVER AGAIN... OW MY EYES...
@@ -19,6 +19,7 @@ namespace NicksOfTerraria.Content.Items
 			Item.value = Item.buyPrice(platinum: 1, gold: 2);
 			Item.maxStack = Item.CommonMaxStack;
 			Item.useStyle = ItemUseStyleID.DrinkLiquid;
+			Item.UseSound = SoundID.Item3; // *Gulp*
 			Item.useAnimation = 10;
 			Item.useTime = 10;
 			Item.useTurn = true;
@@ -28,7 +29,7 @@ namespace NicksOfTerraria.Content.Items
 
 		public override void SetStaticDefaults()
 		{
-			Item.ResearchUnlockCount = 25;
+			Item.ResearchUnlockCount = 20;
 			// Main.RegisterItemAnimation(Type, new DrawAnimationVertical(-1, 3) { NotActuallyAnimating = true });
 		}
 
@@ -54,7 +55,9 @@ namespace NicksOfTerraria.Content.Items
 				int buff = player.buffType[i];
 				if (buff > 0)
 				{
-					bool isDebuff = Main.debuff[buff] || BuffID.Sets.NurseCannotRemoveDebuff[buff];
+					bool isDebuff = (Main.debuff[buff]
+					|| BuffID.Sets.NurseCannotRemoveDebuff[buff])
+					&& buff != BuffID.PotionSickness && buff != BuffID.ManaSickness;
 
 					if (isDebuff)
 					{

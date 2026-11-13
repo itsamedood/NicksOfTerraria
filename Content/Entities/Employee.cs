@@ -1,6 +1,6 @@
 using CalamityMod;
 using Microsoft.Xna.Framework;
-using NicksOfTerraria.Content.Items;
+using NicksOfTerraria.Content.Items.Accessories;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -15,15 +15,15 @@ namespace NicksOfTerraria.Content.Entities
 	{
 		public override void PostUpdate()
 		{
-			AbnormalityRelocatorTP();
+			AbnormalityAnchorTP();
 		}
 
-		public void AbnormalityRelocatorTP()
+		public void AbnormalityAnchorTP()
 		{
 			if (CalamityKeybinds.NormalityRelocatorHotKey != null && CalamityKeybinds.NormalityRelocatorHotKey.JustPressed)
 			{
 				// Checks main inventory & open void bag.
-				if (Player.HasItemInInventoryOrOpenVoidBag(ModContent.ItemType<AbnormalityRelocator>()))
+				if (Player.HasItemInInventoryOrOpenVoidBag(ModContent.ItemType<AbnormalityAnchor>()))
 				{
 					if (Player.dead || Player.frozen || Player.stoned) return;
 

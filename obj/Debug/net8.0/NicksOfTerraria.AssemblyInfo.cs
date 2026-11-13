@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NicksOfTerraria")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eaa7bb253754c0af94043d0a82aa181c009a5743")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7441e9c42f8cd89e269c320eb5e77daa71410e09")]
 [assembly: System.Reflection.AssemblyProductAttribute("NicksOfTerraria")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NicksOfTerraria")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

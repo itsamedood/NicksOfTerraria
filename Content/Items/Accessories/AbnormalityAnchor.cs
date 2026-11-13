@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader;
 
-namespace NicksOfTerraria.Content.Items
+namespace NicksOfTerraria.Content.Items.Accessories
 {
-	public class AbnormalityRelocator : ModItem
+	public class AbnormalityAnchor : ModItem
 	{
 		public override void SetDefaults()
 		{
