@@ -27,7 +27,7 @@ namespace NicksOfTerraria.Content.Items.Weapons
 			Item.autoReuse = false;
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.value = Item.buyPrice(silver: 1);
-			Item.rare = ModContent.RarityType<AvatarRarity>();
+			Item.rare = ModContent.RarityType<NamelessDeityRarity>();
 			Item.UseSound = SoundID.Item1;
 		}
 
@@ -35,8 +35,10 @@ namespace NicksOfTerraria.Content.Items.Weapons
 		{
 			if (Main.mouseLeft && Main.mouseLeftRelease)
 			{
-				if (Main.GameModeInfo.IsJourneyMode) return true;
+				// If in journey mode OR name is "deli boy" (like the murasama thing) return true.
+				if (Main.GameModeInfo.IsJourneyMode || player.whoAmI == Main.myPlayer && player.name == "deli boy") return true;
 
+				// Otherwise proceed with this; if stupid fucking OP ass unnerfed Deity no dead, no sword.
 				if (!BossDownedSaveSystem.HasDefeated<NamelessDeityBoss>())
 				{
 					if (player.whoAmI == Main.myPlayer)

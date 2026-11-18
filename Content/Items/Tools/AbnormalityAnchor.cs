@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader;
 
-namespace NicksOfTerraria.Content.Items.Accessories
+namespace NicksOfTerraria.Content.Items.Tools
 {
 	public class AbnormalityAnchor : ModItem
 	{

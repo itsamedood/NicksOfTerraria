@@ -1,6 +1,6 @@
 using CalamityMod;
 using Microsoft.Xna.Framework;
-using NicksOfTerraria.Content.Items.Accessories;
+using NicksOfTerraria.Content.Items.Tools;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;

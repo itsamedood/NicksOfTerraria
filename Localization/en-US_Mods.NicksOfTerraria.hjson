@@ -33,8 +33,18 @@ Items: {
 	}
 
 	AbnormalityAnchor: {
-		Tooltip: ""
 		DisplayName: Abnormality Anchor
+		Tooltip: ""
+	}
+
+	EnchantedGoodApple: {
+		DisplayName: Enchanted Good Apple
+		Tooltip:
+			'''
+			Eating it sets your life to 2 million!
+			Requires all life upgrades to have been consumed.
+			'The Deity proved useful after all.'
+			'''
 	}
 }
 
