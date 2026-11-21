@@ -2,6 +2,8 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
+using System.Text.RegularExpressions;
+using System.Linq;
 
 namespace NicksOfTerraria.Content.Server
 {
@@ -12,7 +14,7 @@ namespace NicksOfTerraria.Content.Server
 	{
 		public override CommandType Type => CommandType.World;
 		public override string Command => "give";
-		public override string Usage => "/give <ID or name> [amount] | Items with spaces, use \\ (Ex. Like\\This\\See?).";
+		public override string Usage => "/give <\"name\" | ID> [amount (default=1)]";
 
 		public override void Action(CommandCaller caller, string input, string[] args)
 		{
@@ -22,11 +24,17 @@ namespace NicksOfTerraria.Content.Server
 				return;
 			}
 
-			string query = args[0];
+			string query = ParseQuery(args);
 			int item = 0;
 			int amount = 1;
 
-			if (args.Length > 1 && int.TryParse(args[1], out int parsedInt))
+			if (query == null)
+			{
+				caller.Reply("Query was null.", Color.Red);
+				return;
+			}
+
+			if (args.Length > 1 && int.TryParse(args.Last(), out int parsedInt))
 				amount = parsedInt;
 
 			if (int.TryParse(query, out int id))
@@ -45,7 +53,7 @@ namespace NicksOfTerraria.Content.Server
 
 		private static int FindItemByString(string query)
 		{
-			query = query.Replace('\\', ' ');
+			// query = query.Replace('\\', ' ');
 
 			if (ItemID.Search.TryGetId(query, out int vanillaId))
 				return vanillaId;
@@ -69,6 +77,22 @@ namespace NicksOfTerraria.Content.Server
 			}
 
 			return 0; // Not found.
+		}
+
+		private static string ParseQuery(string[] args)
+		{
+			if (args.Length > 1 && !args.Last().Contains('"')) args = [.. args.SkipLast(1)]; // Means the last arg is (hopefully) the amount.
+
+			string input = string.Join(' ', args).Trim();
+			Regex quote = new(@"^\s*""(?<val>[^""]*)""\s*$");
+			Regex idnum = new(@"^\s*(?<val>-?\d+(?:\.\d+)?)\s*$");
+
+			Match qMatch = quote.Match(input);
+			Match iMatch = idnum.Match(input);
+
+			if (qMatch.Success) return input.Replace('"', ' ').Trim();
+			if (iMatch.Success) if (int.TryParse(iMatch.Groups["val"].Value, out int i)) return i.ToString();
+			return null; // Return null if neither are true.
 		}
 	}
 }
