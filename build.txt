@@ -1,4 +1,4 @@
 displayName = Nicks Of Terraria
 author = itsamedood
-version = 0.1.5
+version = 0.1.6
 modReferences = CalamityMod, Daybreak, Luminance, NoxusBoss, ThoriumMod
